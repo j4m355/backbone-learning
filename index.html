@@ -25,7 +25,7 @@
 			console.log("This model has been initialized");
 			},
 		defaults: {
-			title: '',
+			title: 'Peggy Sue',
 			completed: false
 		}
 	});
@@ -39,7 +39,11 @@
 		completed: true
 	});
 
-	console.log(JSON.stringify(todo2))
+
+	console.log(JSON.stringify(todo2));
+
+	console.log(todo1.get('title'));
+	console.log(todo1.get('completed'));
 
 
 </script>
