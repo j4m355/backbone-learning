@@ -26,6 +26,9 @@
 			this.on('change', function(){
 				console.log("Values for this model have changed")
 			});
+			this.on('change:title', function(){
+				console.log("Watch individual items in a model and fire - title has changed")
+			});
 			},
 		defaults: {
 			title: '',
