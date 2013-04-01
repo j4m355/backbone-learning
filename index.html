@@ -59,6 +59,7 @@
 	console.log("Todo title: " + todo2.get('title'));
 	console.log("Completed: " + todo2.get('completed'));
 
+	//the following will only set the listener event off once even though both attributes are being set
 	todo2.set({title : "Both attributes set with model.set", completed : false});
 
 	console.log("Todo title: " + todo2.get('title'));
