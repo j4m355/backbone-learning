@@ -85,9 +85,36 @@
 	//models expose a .attributes attribute which bypasses triggers bound to the model.  It is however best practice to use Model.set() or direct instanciation
 
 	//set validation to true so that validation error is thrown due to title not being set
-	todo2.set("title", "", {validate:true});
+	//todo2.set("title", "", {validate:true});
 
+	var TodoView = Backbone.View.extend({
+		tagName: 'li',
+		todoTpl: _.template("An example template"),
+		events: {
+			'dblclick label': 'edit',
+			'keypress .edit' : 'updateOnEnter',
+			'blur .edit' : 'close'
+		},
+		render: function(){
+			this.$el.html(this.todoTpl(this.todo2.toJSON()));
+			this.input = this.$('.edit');
+			return this;
+		},
+		edit: function(){
 
+		},
+		close:function(){
+
+		},
+		updateOnEnter:function(e)
+		{
+
+		}
+	});
+
+var todoView = new TodoView();
+
+console.log(todoView.el);
 
 </script>
 
