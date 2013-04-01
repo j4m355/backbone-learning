@@ -33,6 +33,9 @@
 		defaults: {
 			title: '',
 			completed: false
+		},
+		setTitle: function(newTitle){
+			this.set({title: newTitle});
 		}
 	});
 
@@ -64,6 +67,7 @@
 
 	//the following will only set the listener event off once even though both attributes are being set
 	todo2.set({title : "Both attributes set with model.set", completed : false});
+	todo2.setTitle("Calling custom method on my model and setting the title")
 
 	console.log("Todo title: " + todo2.get('title'));
 	console.log("Completed: " + todo2.get('completed'));
