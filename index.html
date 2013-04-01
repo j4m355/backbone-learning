@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Title</title>
+
+</head>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+<script type="text/javascript" src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+
+<script type="text/javascript">
+	
+	var Todo = Backbone.Model.extend({
+		initialize: function(){
+			console.log("This model has been initialized");
+		}
+	});
+
+	var todo1 = new Todo();
+
+	console.log(JSON.stringify(todo1));
+
+	var todo2 = new Todo({
+		title: "Check the attributes of both model instances in the console.", 
+		completed: true
+	});
+
+	console.log(JSON.stringify(todo2))
+
+
+</script>
+
+</body>
+
+</html>
