@@ -21,6 +21,12 @@
 <script type="text/javascript">
 	
 	var Todo = Backbone.Model.extend({
+		validate: function(attribs){
+			if(attribs.title === "")
+			{
+				return "Validate Called - Remember to set a title for your todo."
+			}
+		},
 		initialize: function(){
 			console.log("This model has been initialized");
 			this.on('change', function(){
@@ -29,6 +35,10 @@
 			this.on('change:title', function(){
 				console.log("Watch individual items in a model and fire - title has changed")
 			});
+			this.on("invalid", function(model, error)
+				{
+					console.log(error)
+				});
 			},
 		defaults: {
 			title: '',
@@ -74,6 +84,8 @@
 
 	//models expose a .attributes attribute which bypasses triggers bound to the model.  It is however best practice to use Model.set() or direct instanciation
 
+	//set validation to true so that validation error is thrown due to title not being set
+	todo2.set("title", "", {validate:true});
 
 
 
