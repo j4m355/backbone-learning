@@ -35,7 +35,7 @@
 	console.log(JSON.stringify(todo1));
 
 	var todo2 = new Todo({
-		title: "Check the attributes of both model instances in the console.", 
+		title: "Set through instanciation", 
 		completed: true
 	});
 
@@ -47,6 +47,17 @@
 
 	var todo1Attributes = todo1.toJSON();
 	console.log(todo1Attributes);
+
+	console.log("Todo title: " + todo2.get('title'));
+	console.log("Completed: " + todo2.get('completed'));
+
+	todo2.set("title", "Title attribute through Model.set()");
+
+	console.log("Todo title: " + todo2.get('title'));
+	console.log("Completed: " + todo2.get('completed'));
+
+	
+
 
 
 </script>
