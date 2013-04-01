@@ -25,7 +25,7 @@
 			console.log("This model has been initialized");
 			},
 		defaults: {
-			title: 'Peggy Sue',
+			title: '',
 			completed: false
 		}
 	});
@@ -44,6 +44,9 @@
 
 	console.log(todo1.get('title'));
 	console.log(todo1.get('completed'));
+
+	var todo1Attributes = todo1.toJSON();
+	console.log(todo1Attributes);
 
 
 </script>
